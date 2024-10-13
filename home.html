@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Resume Creating AI</title>
+  <meta name="description" content="A web application for creating resumes">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('https://img.freepik.com/premium-photo/businessmen-blur-workplace-office-with-computer-shallow-depth-focus-abstract-background_484651-20299.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    h1 {
+      color: #160202;
+      font-size: 75px;
+      text-shadow: 2px 2px 4px rgba(15, 0, 0, 0.5);
+      animation: slideDown 2s infinite alternate;
+      text-decoration: blink;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="dynamic-text"></h1>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const dynamicText = "Resume Creating AI";
+      let index = 0;
+
+      function typeText() {
+        if (index < dynamicText.length) {
+          document.getElementById("dynamic-text").textContent += dynamicText.charAt(index);
+          index++;
+          setTimeout(typeText, 150); // Adjust typing speed here
+        }
+      }
+
+      typeText(); // Start typing animation
+    });
+  </script>
+  <script src="js/main.js" async defer></script>
+</body>
+</html>
